@@ -1,129 +1,126 @@
-/* Reset & Tampilan Dasar */
+/* Mengatur font dan reset dasar */
 * {
     margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Tampilan Background dengan Gradasi Warna Gen-Z (Cerah & Menarik) */
 body {
-	font-family: 'segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	line-height: 1.6;
-	color: #333;
-	background-color: #f4f7f6;
+    background: linear-gradient(135deg, #fbc531, #e84118, #9c88ff, #00a8ff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.container {
-	width: 85%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-/* Header & Navigasi */
-header {
-	background-color: #2c3e50;
-	color: #fff;
-	padding: 20px 0;
+/* Animasi pergerakan warna background */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-header .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-header h1 {
-	font-size: 24px;
-}
-
-nav ul {
-	list-style: none;
-	display: flex;
-	gap: 20px;
-}	
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-nav ul li a:hover {
-    color: #1abc9c;
-}
-
-/* Hero Section */
-.hero {
-    background-color: #34495e;
-    color: #fff;
+/* Kotak Kartu Profil */
+.profile-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    width: 320px;
+    padding: 30px 20px;
     text-align: center;
-    padding: 100px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.hero h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.8;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #1abc9c;
-    color: #fff;
-    padding: 10px 25px;
-    text-decoration: none;
-    border-radius: 5px;
+/* Badge / Label Status di Atas */
+.badge {
+    background: #ff4757;
+    color: white;
+    font-size: 11px;
     font-weight: bold;
-    transition: background 0.3s;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+}
+
+/* Foto Profil Bundar */
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #9c88ff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+}
+
+/* Nama Pengguna */
+.profile-card h1 {
+    font-size: 22px;
+    color: #2f3640;
+    margin-bottom: 5px;
+}
+
+/* Peran / Profesi */
+.role {
+    color: #718093;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Bio Singkat */
+.bio {
+    font-size: 14px;
+    color: #57606f;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Pembungkus Tombol */
+.social-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Tombol Tautan */
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
-    background-color: #16a085;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Fitur / Grid Card */
-.features {
-    padding: 60px 0;
+/* Warna Khusus Tombol */
+.github {
+    background-color: #2f3640;
 }
 
-.layout-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
+.instagram {
+    background: linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+    );
 }
-
-.card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    flex: 1;
-    text-align: center;
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-.card p {
-    font-size: 14px;
-    color: #666;
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-size: 14px;
-}
-	
-	
-	
-	
